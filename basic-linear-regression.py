@@ -28,6 +28,7 @@ plt.show()
 
 print(f"Missing values:\n{df.isnull().sum()}") # Check for missing values
 df = df.dropna() # Drop missing values if any existed
+# you can also impute instead of dropping (with mean, median, default, calculated)
 
 # Reshape for Scikit-Learn (X must be a 2D array)
 X = df[['years_of_experience']] 
@@ -60,4 +61,5 @@ print(f"Mean Absolute Error: ${mae:.2f}")
 test_experience_df = pd.DataFrame({'years_of_experience': [5]}) # create df for test value to match the training format
 predicted_salary = model.predict(test_experience_df) # predict using the DataFrame
 print(f"Predicted Salary for {test_experience_df.iloc[0, 0]} years: ${predicted_salary[0]:,.2f}")
+
 
